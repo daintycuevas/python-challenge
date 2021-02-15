@@ -2,7 +2,7 @@ import os
 
 import csv
 
-budget_path = os.path.join("../Resources/budget_data.csv")
+budget_path = os.path.join("../Python-challenge/Resources/budget_data.csv")
 
 budget_csv = budget_path
 
