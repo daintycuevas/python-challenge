@@ -2,7 +2,7 @@ import os
 
 import csv
 
-budget_path = os.path.join("..", "Resources", "budget_data.csv")
+budget_path = os.path.join("budget_data.csv")
 
 budget_csv = budget_path
 
@@ -17,11 +17,41 @@ with open(budget_csv) as csvfile:
     budget_data = csv.reader(csvfile, delimiter=",")
     header = next(budget_data)
 
-    months = {}
-    for entry in budget_data:   
-        if entry[0] not in months:
-            months[entry[0]] = 0
-            months[entry[0]] = months[entry[0]] + 1
 
-    total_months = [{'month': entry, 'count': months[entry]} for entry in months]
-    print(total_months)
+#Months       
+    month = []
+    revenue = []
+
+    for row in budget_data:
+        month.append(row[0])
+        revenue.append(row[1])
+    print(len(month))
+
+    total_revenue = (sum(revenue))
+    print(total_revenue)
+    
+    # months =  []
+    # for item in budget_data:
+    #     item.append(item[0])
+        
+    # print(budget_data)
+    # # month_list = []
+    # # for result in months:
+    # #     month_list.append(result)
+
+    # year = []
+    # month = []
+    # month_count = {}
+    # for entry in budget_data:   
+    #     month_list = str(month_count)
+    #     month_list.replace('-', ',').split(',') 
+    #     month.append(month_list[0])
+    #     year.append(month_list[1])
+
+        # if month not in month_count:
+        #     month_count = 0
+        #     month_count += 1
+
+
+    # total_months = [{'month': entry, 'count': month_count[entry]} for entry in month_count]
+   
